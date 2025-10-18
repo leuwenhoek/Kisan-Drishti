@@ -12,7 +12,8 @@
 		<a href="/AI" class="text-lg font-medium  text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200">Predict</a>
 		<a href="/library" class="text-lg font-medium  text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200">Library</a>
 		<a href="/about" class="text-lg font-medium  text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200">About</a>
-
+		<a href="/history" class="text-lg font-medium  text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200">History</a>
+		
 		</div>
 
 <svelte:head>

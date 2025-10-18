@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kisan Dhristi</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-green-50 font-sans text-gray-800">
+<body class="bg-green-50 font-sans text-gray-800 overflow-x-hidden">
 
     <!-- Header / Hero Section -->
     <header class="bg-green-700 text-white">
         <div class="max-w-6xl mx-auto px-6 py-20 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Kisan Dhristi</h1>
             <p class="text-xl md:text-2xl">Transforming Crop Health with AI & Technology</p>
-            <a href="#solution" class="mt-6 inline-block bg-yellow-400 text-green-900 font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition">Learn More</a>
+            <a href="#solution" class="mt-6 inline-block bg-yellow-400 text-green-900 font-semibold py-3 px-6 rounded hover:bg-yellow-600 active:text-xl transition-all duration-200">Learn More</a>
         </div>
     </header>
 
