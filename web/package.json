@@ -16,9 +16,8 @@
 		"db:studio": "drizzle-kit studio"
 	},
 	"prisma": {
-    "seed": "tsx prisma/seed.ts"
-  	}
-	,
+		"seed": "tsx prisma/seed.ts"
+	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.0",
 		"@sveltejs/kit": "^2.43.2",
@@ -37,6 +36,7 @@
 	},
 	"dependencies": {
 		"@prisma/client": "^6.17.1",
-		"@prisma/extension-accelerate": "^2.0.2"
+		"@prisma/extension-accelerate": "^2.0.2",
+		"marked": "^16.4.1"
 	}
 }
