@@ -1,17 +1,37 @@
-<script lang="ts">
+<script>
+  export let team = [
+    { name: 'Ayush Kumar', role: 'Team Leader and AI lead.' },
+    { name: 'Priyanshu Mahala', role: 'Frontend and Backend lead. and, Devops' },
+    { name: 'Anjani Krisha', role: 'Backend Engineer' },
+    { name: 'Ayush Singh', role: 'Frontend Engineer' },
+    { name: 'Suttapa Das', role: 'UI/UX Designer'}
+  ];
 </script>
 
-<div class="max-w-4xl mx-auto px-6 py-16 text-center space-y-8">
-    <p class="text-6xl font-bold hover:text-gray-600 transition-all duration-200">Kisan Dhristi</p>
-    <p class="text-2xl font-semibold">Our Team:</p>
+<section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-green-50 to-white p-8 " >
+  <div class="max-w-5xl w-full">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-12 text-center">Our Team</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
+      {#each team as member}
+        <div class="relative p-6 rounded-2xl backdrop-blur-md bg-white/30 border border-white/40 shadow-xl transition-transform duration-500 hover:scale-[1.03] hover:-translate-y-1">
+          <div class="absolute -inset-10 blur-3xl opacity-40 bg-gradient-to-tr from-green-100 to-green-50 -z-10"></div>
+          <div class="text-center">
+            <h3 class="text-xl font-semibold text-gray-900">{member.name}</h3>
+            <p class="text-gray-600 mt-1">{member.role}</p>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
 
-    <ul class="space-y-4 text-left md:text-center md:flex md:justify-center md:gap-8">
-        <li class="bg-green-100 p-4 rounded shadow hover:shadow-lg transition">Ayush Kumar: Team Lead</li>
-        <li class="bg-green-100 p-4 rounded shadow hover:shadow-lg transition">Priyanshu Mahala: Web Developer</li>
-        <li class="bg-green-100 p-4 rounded shadow hover:shadow-lg transition">Anjani Krishan: Frontend Developer</li>
-    </ul>
-
-    <p class="text-lg text-gray-700 max-w-2xl mx-auto">
-        This project aims to solve the issue of late crop disease detection by providing instant AI-powered guidance to farmers.
-    </p>
-</div>
+<style>
+  @keyframes blob {
+    0% { transform: scale(1) translate(0,0); }
+    33% { transform: scale(1.05) translate(5px,-5px); }
+    66% { transform: scale(0.97) translate(-5px,5px); }
+    100% { transform: scale(1) translate(0,0); }
+  }
+  .blur-3xl { filter: blur(40px); }
+  .backdrop-blur-md { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+</style>
