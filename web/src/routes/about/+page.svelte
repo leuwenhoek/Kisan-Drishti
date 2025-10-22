@@ -1,9 +1,9 @@
 <script>
   export let team = [
-    { name: 'Ayush Kumar', role: 'Team Leader and AI lead.' },
+    { name: 'Ayush Kumar', role: 'Team Leader, AI lead. and IOT lead' },
     { name: 'Priyanshu Mahala', role: 'Frontend and Backend lead. and, Devops' },
-    { name: 'Anjani Krisha', role: 'Backend Engineer' },
-    { name: 'Ayush Singh', role: 'Frontend Engineer' },
+    { name: 'Anjani Krisha', role: 'Backend developer and Frontend lead.' },
+    { name: 'Ayush Singh', role: 'Frontend developer' },
     { name: 'Suttapa Das', role: 'UI/UX Designer'}
   ];
 </script>
