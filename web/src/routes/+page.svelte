@@ -280,7 +280,7 @@
 		></div>
 	</div>
 	<p class="relative text-green-100 hover:text-white transition-colors duration-300">
-		© 2025 Kisan Drishti. Empowering farmers with AI technology.
+		© 2025 Kisan Drishti KVGM Buildathon Team. <a class="text-blue-300" href="/about">Built by</a>.
 	</p>
 </footer>
 
