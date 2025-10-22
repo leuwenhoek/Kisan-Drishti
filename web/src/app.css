@@ -3,5 +3,5 @@
 @plugin '@tailwindcss/typography';
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'JetBrains Mono', monospace;
 }

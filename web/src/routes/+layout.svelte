@@ -3,47 +3,106 @@
 	import favicon from '$lib/assets/favicon.png';
 
 	let { children } = $props();
-</script>
+	let isOpen = $state(false);
 
-<div
-	class="top-0 left-0 w-screen overflow-auto
-			flex flex-row
-			bg-gray-500 text-white shadow-lg"
->
-	<a
-		href="/"
-		class="text-lg font-medium text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200"
-		>Home</a
-	>
-	<a
-		href="/AI"
-		class="text-lg font-medium text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200"
-		>Predict</a
-	>
-	<a
-		href="/library"
-		class="text-lg font-medium text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200"
-		>Library</a
-	>
-	<a
-		href="/history"
-		class="text-lg font-medium text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200"
-		>History</a
-	>
-	<a
-		href="/chat"
-		class="text-lg font-medium text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200"
-		>Chat</a
-	>
-	<a
-		href="/about"
-		class="text-lg font-medium text-white px-3 py-2 rounded-4xl hover:bg-gray-600 active:scale-95 transition-all duration-200"
-		>About</a
-	>
-</div>
+	function toggleMenu() {
+		isOpen = !isOpen;
+	}
+
+	function closeMenu() {
+		isOpen = false;
+	}
+</script>
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="stylesheet" href="app.css" />
 </svelte:head>
 
+<!-- Fixed hamburger button - always visible -->
+<button
+	onclick={toggleMenu}
+	class="fixed top-4 right-4 z-50 flex flex-col gap-[7px] h-12 w-12 items-center justify-center rounded-lg bg-slate-800 text-white shadow-lg transition-colors hover:bg-slate-700"
+	aria-label="Toggle menu"
+	aria-expanded={isOpen}
+>
+	<span class="sr-only">Menu</span>
+
+	<!-- Top line -->
+	<span
+		class="block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out origin-center"
+		style={isOpen ? 'transform: rotate(45deg) translateY(7.5px);' : ''}
+	></span>
+
+	<!-- Middle line -->
+	<span
+		class="block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out"
+		style={isOpen ? 'opacity: 0; transform: scaleX(0);' : ''}
+	></span>
+
+	<!-- Bottom line -->
+	<span
+		class="block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out origin-center"
+		style={isOpen ? 'transform: rotate(-45deg) translateY(-7.5px);' : ''}
+	></span>
+</button>
+
+<!-- Full screen menu overlay -->
+{#if isOpen}
+	<div
+		onclick={closeMenu}
+		onkeydown={(e) => {
+			if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') {
+				e.preventDefault();
+				closeMenu();
+			}
+		}}
+		role="button"
+		tabindex="0"
+		aria-label="Close menu"
+		class="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-sm animate-in fade-in duration-300"
+	>
+		<div class="flex min-h-screen items-center justify-center p-4">
+			<nav class="flex flex-col space-y-8 text-center" aria-label="Main navigation">
+				<a
+					href="/"
+					onclick={closeMenu}
+					class="text-5xl font-bold text-white transition-all duration-200 hover:text-blue-400 hover:scale-110"
+				>
+					Home
+				</a>
+				<a
+					href="/about"
+					onclick={closeMenu}
+					class="text-5xl font-bold text-white transition-all duration-200 hover:text-blue-400 hover:scale-110"
+				>
+					About
+				</a>
+				<a
+					href="/chat"
+					onclick={closeMenu}
+					class="text-5xl font-bold text-white transition-all duration-200 hover:text-blue-400 hover:scale-110"
+				>
+					AI
+				</a>
+				<a
+					href="/library"
+					onclick={closeMenu}
+					class="text-5xl font-bold text-white transition-all duration-200 hover:text-blue-400 hover:scale-110"
+				>
+					Library
+				</a>
+				<a
+					href="/history"
+					onclick={closeMenu}
+					class="text-5xl font-bold text-white transition-all duration-200 hover:text-blue-400 hover:scale-110"
+				>
+					History
+				</a>
+			</nav>
+		</div>
+	</div>
+{/if}
+
+<!-- Main content -->
 {@render children?.()}
