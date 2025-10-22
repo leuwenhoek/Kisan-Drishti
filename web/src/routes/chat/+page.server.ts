@@ -1,3 +1,4 @@
+// @ts-ignore
 import { GoogleGenAI } from "@google/genai";
 import { GEMINI_API_KEY } from "$env/static/private";
 import type { Actions, RequestEvent } from "./$types";
